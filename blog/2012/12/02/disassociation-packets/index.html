@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Evil Twin Attack: Disassociation Packets - Iris Security Labs Blog</title>
+  <meta name="author" content="Iris Security Labs">
+
+  
+  <meta name="description" content="Evil Twin Attack: An attack in which the attacker deauthenticates clients from an access point (AP) then takes it down and puts up a fake AP with an &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Iris Security Labs Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72521344-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <img src="../../images/logo.png" style="width:40%;height:40%;">
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="blog.irissecuritylabs.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Evil Twin Attack: Disassociation Packets</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-12-02T13:03:36-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>1:03 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Evil Twin Attack: An attack in which the attacker deauthenticates clients from an access point (AP) then takes it down and puts up a fake AP with an identical SSID to that of the original to intercept and monitor all traffic as a man in the middle.</p>
+
+<p>In this portion of the attack I will mainly be focusing on the deauthentication packets or disassociation frames. The purpose of these deauthentication packets is to knock all the clients off of a wireless network before having them reconnect to the fake AP.</p>
+
+<p>Another purpose for sending deauthentication packets is to observe the tcp handshake between a client and an AP to perform encrypted wifi password cracking. (This won&rsquo;t be covered in this tutorial)</p>
+
+<p>So first you will need to be sure your wireless card supports wireless packet injection. The card I will be using is a Ralink SI-7200ND:</p>
+
+<p><img src="../../images/Ralink.jpg" alt="Ralink 7200ND" /></p>
+
+<p>Next, the linux distro we will be using is Backtrack 5 R3, mainly because it comes prepackaged with all the tools we will need.</p>
+
+<p>Before we can do any packet injections, our network interface card must first be put into monitor mode, so connect to your network and enter:</p>
+
+<p><code>airmon-ng start wlan1</code></p>
+
+<p>This will put your wireless interface card into monitor mode (given you are using wlan1) and  if you now enter ifconfig, you will see a new interface called mon0. We will be using this interface for all of our our commands from here on out.</p>
+
+<p>Now we&rsquo;ll run a test with our new interface to make sure it supports packet injection, enter:</p>
+
+<p><code>aireplay-ng -9 mon0</code></p>
+
+<p><img src="../../images/162728_437x66_scrot.png" alt="Injection Test" /></p>
+
+<p>This should confirm that you have the ability to inject packets and also give you the MAC address of the AP you&rsquo;re targeting for our next step.</p>
+
+<p>Next, we knock everyone off the network, enter:</p>
+
+<p><code>aireplay-ng -0 0 -a 08:EA:44:2C:C5:DO mon0</code></p>
+
+<p>The -0 specifies deauthentication packets, the 0 sends non-stop packets, and the -a specifies the MAC address of the router.</p>
+
+<p>This is what it should look like:</p>
+
+<p><a href="../../images/161320_539x181_scrot.png"><img src="images/161320_539x181_scrot.png" alt="Deauthentication packets" /></a></p>
+
+<p>And here is what happened to our client targets:</p>
+
+<p><a href="../../images/131450_560x148_scrot.png"><img src="images/131450_560x148_scrot.png" alt="Disassociated client" /></a></p>
+
+<p>As for the rest of the Evil Twin Attack, it will be covered in another post.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Iris Security Labs</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-12-02T13:03:36-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>1:03 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/technical-writeups/'>technical-writeups</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets/" data-via="iris_security" data-counturl="http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor/" title="Previous Post: Simple but effective - Hyperion PE-cryptor">&laquo; Simple but effective - Hyperion PE-cryptor</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder/" title="Next Post: Bypass antivirus with Shikata Ga Nai encoder">Bypass antivirus with Shikata Ga Nai encoder &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/">Custom PHP Backdoor Shell With Weevely</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/meterpreter-over-ssl-with-maligno/">Meterpreter Over SSL With Maligno</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/21/anonymous-content-grabbing-with-python/">Anonymous Content Grabbing With Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/">Granular Network Security Monitoring With Bro IDS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/11/cryptolocker-analysis-with-volatility/">Cryptolocker Analysis With Volatility</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/irissecuritylabs">@irissecuritylabs</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'irissecuritylabs',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Iris Security Labs -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

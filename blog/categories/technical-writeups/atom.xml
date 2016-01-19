@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Technical-writeups | Iris Security Labs Blog]]></title>
+  <link href="http://blog.irissecuritylabs.com/blog/categories/technical-writeups/atom.xml" rel="self"/>
+  <link href="http://blog.irissecuritylabs.com/"/>
+  <updated>2016-01-19T12:19:09-05:00</updated>
+  <id>http://blog.irissecuritylabs.com/</id>
+  <author>
+    <name><![CDATA[Iris Security Labs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Custom PHP Backdoor Shell With Weevely]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
+    <updated>2015-02-27T14:45:07-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I knew about the classic c99.php backdoor shell and knew that it wasn&rsquo;t the direction I wanted to go in. If you haven&rsquo;t read The Hacker Blog article on it <a href="http://thehackerblog.com/every-c99-php-shell-is-backdoored-aka-free-shells/">here</a>, it&rsquo;s definitely worth a read.</p>
+
+<p>So I came across Weevely. What an awesome little backdoor! Here I&rsquo;m just going to walk through the basic usage of it to get you up and running. This backdoor is definitely the quick and easy way of doing things when pentesting a PHP site.</p>
+
+<ol>
+<li><p>Using Kali, Weevely is already built in, we can generate our backdoor with our password to connect to it. My password will be blagger:
+         <code>weevely generate blagger sneaky.php</code>
+         <img src="../../images/weevely1.png" alt="weevely1" /></p></li>
+<li><p>Next, for simplicity sake, I will upload the backdoor to my test web server using SFTP. Of course there are hundreds of other ways to get your PHP script onto a web server, but this is a demo. Because my web server is ran on Amazon&rsquo;s Ec2, I need to remote in using a limited user account. Still I can upload the file to the tmp directory to be moved by root:
+         <img src="../../images/weevely2.png" alt="weevely2" /></p></li>
+<li><p>Finally, I&rsquo;ll SSH in and move the uploaded backdoor into the public facing web directory to allow access for Weevely to connect. Once it&rsquo;s publicly accessible, browse to it in Weevely and your back door gets executed:
+         <code>weevely http://52.0.212.83/sneaky.php blagger</code>
+         <img src="../../images/weevely3.png" alt="weevely3" />
+         <img src="../../images/weevely4.png" alt="weevely4" /></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Meterpreter Over SSL With Maligno]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
+    <updated>2014-07-01T22:20:17-04:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
+    <content type="html"><![CDATA[<p>Certain situations require meterpreter sessions to be encrypted to avoid layer 4 detection. This is something I&rsquo;ve desired in the past but never really pursued, until I came across Maligno. Maligno is a platform from which you can launch metasploit payloads via https that are AES encrypted and base64 encoded. The payload to be pushed to the client can also be be encoded numerous times via any Metasploit encoders to avoid layer 7 detection.</p>
+
+<p>This is the process of setting up your server:</p>
+
+<ol>
+<li><p>Download and extract Maligno here: <a href="http://www.encripto.no/tools/maligno-1.1.tar.gz">Maligno</a></p></li>
+<li><p>Install the prerequisite binaries:</p>
+
+<p><code>sudo apt-get update &amp;&amp; sudo apt-get install python-ipcalc</code></p></li>
+<li><p>Generate the self-signed SSL cert to be used on your server:</p>
+
+<p><code>./certgen.sh</code></p></li>
+<li><p>Configure server.conf to allow the following:</p>
+
+<ul>
+<li><p>Serve 3 different payloads to 3 different targets all over port 443</p></li>
+<li><p>Serve via https</p></li>
+<li><p>Scope to your network</p></li>
+<li><p>Set the server IP to that of the Maligno host</p></li>
+</ul>
+
+
+<p><img src="../../images/maligno-conf.png" alt="maligno-conf" /></p></li>
+<li><p>Generate the python scripts for the clients to reach out to Maligno with:</p>
+
+<p><code>python clientgen.py -i 0 -f server.conf -o client1.py
+    python clientgen.py -i 1 -f server.conf -o client2.py
+    python clientgen.py -i 2 -f server.conf -o client3.py</code></p></li>
+<li><p>On a Windows machine, install python2.7, pycrypto and py2exe.</p></li>
+<li><p>Generate executables from the python scripts using py2exe for all 3 target clients:</p>
+
+<p><img src="../../images/maligno-bins.png" alt="maligno-bins" /></p></li>
+<li><p>Start the Maligno server and the meterpreter handler to listen for incoming connections:</p>
+
+<p><img src="../../images/maligno-start.png" alt="maligno-start" /></p></li>
+<li><p>Upon execution of your crafted executables, an encrypted meterpreter session will be opened undetected by antivirus or NIDS:</p>
+
+<p><img src="../../images/maligno-stager.png" alt="maligno-stager" />
+    <img src="../../images/maligno-meterpreter.png" alt="maligno-meterpreter" />
+    <img src="../../images/maligno-vtresults.png" alt="maligno-vtresults" /></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Anonymous Content Grabbing With Python]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
+    <updated>2014-01-21T21:15:36-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
+    <content type="html"><![CDATA[<p><img src="../../images/Anonymity.png" alt="Anonymity" /></p>
+
+<p>As a malware analyst, sometimes it&rsquo;s necessary to obtain a sample of a website&rsquo;s source code to manually evaluate any hidden malicious JavaScript. But why give up your IP address and possibly your exact whereabouts just to snoop around?</p>
+
+<p>Fellow analysts, we present to you, our customized python-based anonymous browser, <a href="https://github.com/irissecuritylabs/anonBrowser">anonBrowser.py</a>.</p>
+
+<p>Nothing special, just a quick and dirty little terminal program that pulls a random proxy, emulates a random browser and pulls the specified content using it&rsquo;s forged identity. Written so that it&rsquo;s easy to understand and easy to customize should you like to make changes to it.</p>
+
+<p>Usage: ./anonBrowser.py -s URL</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Granular Network Security Monitoring With Bro IDS]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
+    <updated>2014-01-21T21:14:09-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
+    <content type="html"><![CDATA[<p><img src="../../images/Onion.png" alt="Onion" /></p>
+
+<p>If you&rsquo;re a security researcher and haven&rsquo;t kicked the wheels yet of Doug Burks' <a href="https://code.google.com/p/security-onion/">Security Onion</a>, you&rsquo;re missing out on a enormous asset to your security arsenal. The Onion provides complete insight into your network providing you with a full IDS (Intrusion Detection System) and NSM (Network Security Monitoring) capabilities.</p>
+
+<p>One of the greatest tools Security Onion provides is Bro logging. The Security Onion takes less than an hour to setup and configure, but once connected to a network tap and put in &ldquo;promiscuous&rdquo; mode, Bro logging kicks in and begins capturing, logging, and compressing every packet flowing into and out of your network.</p>
+
+<p>Given this visibility sparked me to write a little bash script building off of <a href="http://sketchymoose.blogspot.com/">Sketchymoose&rsquo;s</a> python written URL checker, which uses Virustotal&rsquo;s API to check a large quantity of given URLs for any detections among 51 scanning engines.</p>
+
+<p>The script coupled with the Onion is designed to find any and all domains visited by anyone on the network that end in foreign country codes (.hk .ru .cc &hellip;etc) over the duration of 24 hours at 11:55 pm. These domains are then scanned by Virus Total and those that come back as being malicious are recorded.</p>
+
+<p>An email will then be sent at midnight informing the incident response team which endpoints had visited malicious sites and for how long each connection persisted after the initial connection had been made.</p>
+
+<p>If a connection was made to a known malicious site and the connection lasted dozens of minutes or hours, it can be assumed that the endpoint was more than likely compromised. At this point the endpoint would be further examined and an investigation can be made to determine whether or not any sensitive data was put at risk.</p>
+
+<p>Follow these steps to configure the script.</p>
+
+<ol>
+<li><p>Install Security Onion and configure the tap interface to monitor in promiscuous mode.</p></li>
+<li><p>Create a directory in the /opt/ folder called URLchecker.</p></li>
+<li><p>Inside URLchecker, place <a href="https://github.com/irissecuritylabs/CountryCodeChecker">CountryCodeChecker.sh</a> and both Sketchymoose&rsquo;s scripts, <a href="https://github.com/sketchymoose/UrlCheckerScript/blob/master/urlChecker.py">urlChecker.py</a> and <a href="https://github.com/sketchymoose/UrlCheckerScript/blob/master/parseCheckerFile.py">parseCheckerFile.py</a>.</p></li>
+<li><p>Edit urlChecker.py and provide your Virus Total API key (free once you sign up.) Also, be sure to uncomment the timeout.sleep functions if you have a free license. Comment out line 50, 122,126, and 129 to lessen the verbosity of the script. If you encounter errors regarding invalid JSON variables, I fixed this by changing line 121 to <code>if count1 % 4 == 0:</code> and changing my sleep intervals to 30 seconds instead of 15.</p></li>
+<li><p>Edit parseCheckerFile.py by changing line 30 to <code>[base:base+4]</code> and line 31 to <code>if "Link: " in l:</code> .</p></li>
+<li><p>Make CountryCodeChecker.sh executable with:
+<code>sudo chmod u+x CountryCodeChecker.sh
+</code></p></li>
+<li><p>Follow <a href="http://www.nixtutor.com/linux/send-mail-with-gmail-and-ssmtp/">this tutorial</a> to setup SSMTP to allow cron to email you the script output, Gmail works fine but if you have an internal email server, that should work too.</p></li>
+<li><p>To configure cron run crontab -e as root, select nano as your editor, then put in the bottom of your crontab file:
+<code>MAILTO=""
+55 23 * * * /opt/URLchecker/CountryCodeChecker.sh | /usr/sbin/ssmtp example@gmail.com</code></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cryptolocker Analysis With Volatility]]></title>
+    <link href="http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
+    <updated>2013-11-11T19:15:32-05:00</updated>
+    <id>http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s been a lot of hype recently about the new cryptolocker virus going around. Lucky me, I got a copy of it. Ths write-up documents what I found. Upon opening a malicious email sent to the user, <code>7879.tmp.exe</code> made it&rsquo;s way onto the system. This executable spawned two more processes, <code>bcfitawu.exe</code> and <code>Kgvndlyklezfbnr.exe</code>. A full memory dump was acquired using mandiant&rsquo;s tool Redline. A quick run through in Malwr and anubis prouced the following results:</p>
+
+<p><code>7879.tmp.exe</code>:
+<a href="https://malwr.com/analysis/Y2UxODQyOWY2ZjljNDk3NDg0M2FhYzkyN2EyZmU4ZWI/">Malwr Results</a>
+<a href="http://anubis.iseclab.org/?action=result&amp;task_id=1dd23ed8687660bb4e984999a1b52fa61&amp;format=html">Anubis Results</a></p>
+
+<p><code>bcfitawu.exe:</code>:
+<a href="https://malwr.com/analysis/MWIwNWFmY2I0NzY2NDNkNjkxNWY2MTE3NTlmMmVjNjQ/">Malwr Results</a>
+<a href="http://anubis.iseclab.org/?action=result&amp;task_id=1f261568f47d256443dd2ababfc184692&amp;format=html">Anubis Results</a></p>
+
+<p><code>Kgvndlyklezfbnr.exe:</code>:
+<a href="https://malwr.com/analysis/ZjZkODVkZWZhMzc3NDg0N2EyMjE5OGIxODM5NjcyMjI/">Malwr Results</a>
+<a href="http://anubis.iseclab.org/?action=result&amp;task_id=161cda69514dde36401bd893c228a288a&amp;format=html">Anubis Results</a></p>
+
+<p>Next I wanted to examine the behaviour of the malware samples using Volatility.  Kali Linux made this easy by already having Volatility installed. These were the commands I ran:</p>
+
+<ol>
+<li><p>Python vol.py -f &lt;image.img> imageinfo</p>
+
+<p>   <img src="../../images/imageinfo1.png" alt="imageinfo" /></p>
+
+<p>   Imageinfo will print out the operating system name and service pack. This is required to run further volatility commands.</p></li>
+<li><p>Python vol.py -f &lt;image.img> &ndash;profile=Win7SP1x64 pslist</p>
+
+<p>   <img src="../../images/pslist.png" alt="pslist" /></p>
+
+<p>   Pslist will print out all of the processes along with their PIDs and PPIDs.</p></li>
+<li><p>Python vol.py -f &lt;image.img> &ndash;profile=Win7SP1x64 dlldump -pid=<process> id -D ~/Desktop/samples</p>
+
+<p>   <img src="../../images/dlldump.png" alt="dlldump" /></p>
+
+<p>   Dlldump allows you to grab samples of all the dlls used by a particular proccess by specifying the PID and the output directory to drop the dlls to.</p></li>
+<li><p><a href="https://www.virustotal.com/en/file/2bff9d483420df2f41c7eba232c6d90853df6acfe9f9b163af5d3495ea082229/analysis/"> VirusTotal Scan Results</a></p>
+
+<p>   <img src="../../images/virustotal.png" alt="VirusTotal" /></p>
+
+<p>   A quick run through VirusTotal tells us these dlls were in fact malicious.</p></li>
+<li><p>Python vol.py -f &lt;image.img> &ndash;profile=Win7SP1x64 netscan | grep process name</p>
+
+<p>   <img src="../../images/netscan.png" alt="netscan" /></p>
+
+<p>   Netscan will show you all the connections made by running processes at the time of a memory capture. You can then pipe the output and perform a search by process names. In this scenario, it was apparent that <strong><code>Kgvndlyklezfbnr.exe</code></strong> made a connection to 212.71.250.4. A IPReputation search on that IP then confirmed that the cryptolocker virus had indeed contacted home base:
+    <img src="../../images/IPreputation.png" alt="IPReputation" /></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
