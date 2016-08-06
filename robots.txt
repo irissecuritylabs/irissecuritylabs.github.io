@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.irissecuritylabs.com/sitemap.xml 
+Sitemap: http://irissecuritylabs.github.io/sitemap.xml 

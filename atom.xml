@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Iris Security Labs Blog]]></title>
-  <link href="http://blog.irissecuritylabs.com/atom.xml" rel="self"/>
-  <link href="http://blog.irissecuritylabs.com/"/>
+  <link href="http://irissecuritylabs.github.io/atom.xml" rel="self"/>
+  <link href="http://irissecuritylabs.github.io/"/>
   <updated>2016-01-19T12:19:09-05:00</updated>
-  <id>http://blog.irissecuritylabs.com/</id>
+  <id>http://irissecuritylabs.github.io/</id>
   <author>
     <name><![CDATA[Iris Security Labs]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Custom PHP Backdoor Shell With Weevely]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
     <updated>2015-02-27T14:45:07-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
+    <id>http://irissecuritylabs.github.io/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I knew about the classic c99.php backdoor shell and knew that it wasn&rsquo;t the direction I wanted to go in. If you haven&rsquo;t read The Hacker Blog article on it <a href="http://thehackerblog.com/every-c99-php-shell-is-backdoored-aka-free-shells/">here</a>, it&rsquo;s definitely worth a read.</p>
 
 <p>So I came across Weevely. What an awesome little backdoor! Here I&rsquo;m just going to walk through the basic usage of it to get you up and running. This backdoor is definitely the quick and easy way of doing things when pentesting a PHP site.</p>
@@ -39,9 +39,9 @@
   
   <entry>
     <title type="html"><![CDATA[Meterpreter Over SSL With Maligno]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
     <updated>2014-07-01T22:20:17-04:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
     <content type="html"><![CDATA[<p>Certain situations require meterpreter sessions to be encrypted to avoid layer 4 detection. This is something I&rsquo;ve desired in the past but never really pursued, until I came across Maligno. Maligno is a platform from which you can launch metasploit payloads via https that are AES encrypted and base64 encoded. The payload to be pushed to the client can also be be encoded numerous times via any Metasploit encoders to avoid layer 7 detection.</p>
 
 <p>This is the process of setting up your server:</p>
@@ -89,9 +89,9 @@
   
   <entry>
     <title type="html"><![CDATA[Anonymous Content Grabbing With Python]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
     <updated>2014-01-21T21:15:36-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
     <content type="html"><![CDATA[<p><img src="../../images/Anonymity.png" alt="Anonymity" /></p>
 
 <p>As a malware analyst, sometimes it&rsquo;s necessary to obtain a sample of a website&rsquo;s source code to manually evaluate any hidden malicious JavaScript. But why give up your IP address and possibly your exact whereabouts just to snoop around?</p>
@@ -106,9 +106,9 @@
   
   <entry>
     <title type="html"><![CDATA[Granular Network Security Monitoring With Bro IDS]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
     <updated>2014-01-21T21:14:09-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
     <content type="html"><![CDATA[<p><img src="../../images/Onion.png" alt="Onion" /></p>
 
 <p>If you&rsquo;re a security researcher and haven&rsquo;t kicked the wheels yet of Doug Burks' <a href="https://code.google.com/p/security-onion/">Security Onion</a>, you&rsquo;re missing out on a enormous asset to your security arsenal. The Onion provides complete insight into your network providing you with a full IDS (Intrusion Detection System) and NSM (Network Security Monitoring) capabilities.</p>
@@ -145,9 +145,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cryptolocker Analysis With Volatility]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
     <updated>2013-11-11T19:15:32-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
+    <id>http://irissecuritylabs.github.io/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
     <content type="html"><![CDATA[<p>There&rsquo;s been a lot of hype recently about the new cryptolocker virus going around. Lucky me, I got a copy of it. Ths write-up documents what I found. Upon opening a malicious email sent to the user, <code>7879.tmp.exe</code> made it&rsquo;s way onto the system. This executable spawned two more processes, <code>bcfitawu.exe</code> and <code>Kgvndlyklezfbnr.exe</code>. A full memory dump was acquired using mandiant&rsquo;s tool Redline. A quick run through in Malwr and anubis prouced the following results:</p>
 
 <p><code>7879.tmp.exe</code>:
@@ -198,9 +198,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rsyslog vs Syslog-ng]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2013/03/18/rsyslog-vs-syslog-ng/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2013/03/18/rsyslog-vs-syslog-ng/"/>
     <updated>2013-03-18T16:30:51-04:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2013/03/18/rsyslog-vs-syslog-ng</id>
+    <id>http://irissecuritylabs.github.io/blog/2013/03/18/rsyslog-vs-syslog-ng</id>
     <content type="html"><![CDATA[<p>Ever tried to set-up a central server to manage all of you log aggregation? This post covers my exploration of two key components of just about any centralized logging server.</p>
 
 <p>If you&rsquo;re thinking about setting up remote logging, you will undoubtedly be needing either syslog-ng or rsyslog.
@@ -255,9 +255,9 @@ log {source(firewall); destination(firewall); };</code></p>
   
   <entry>
     <title type="html"><![CDATA[Reset Windows Passwords Using Backtrack]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2013/01/07/reset-windows-passwords-using-backtrack/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2013/01/07/reset-windows-passwords-using-backtrack/"/>
     <updated>2013-01-07T08:16:42-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2013/01/07/reset-windows-passwords-using-backtrack</id>
+    <id>http://irissecuritylabs.github.io/blog/2013/01/07/reset-windows-passwords-using-backtrack</id>
     <content type="html"><![CDATA[<p>This is just a quick and dirty write-up on resetting a &ldquo;forgotten&rdquo; windows password using Linux. Backtrack specifically.</p>
 
 <p>To use this method, we will be using a Backtrack live usb drive. Once you&rsquo;ve downloaded the Backtrack iso and loaded it onto the usb drive (I prefer using unetbootin for this) we&rsquo;re ready to get started.</p>
@@ -300,9 +300,9 @@ log {source(firewall); destination(firewall); };</code></p>
   
   <entry>
     <title type="html"><![CDATA[Google Hacks - Find Anything You Want]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2012/12/31/google-hacks-find-anything-you-want/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2012/12/31/google-hacks-find-anything-you-want/"/>
     <updated>2012-12-31T21:40:14-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2012/12/31/google-hacks-find-anything-you-want</id>
+    <id>http://irissecuritylabs.github.io/blog/2012/12/31/google-hacks-find-anything-you-want</id>
     <content type="html"><![CDATA[<p><img src="../../images/google_hack.jpg" alt="Google hack" /></p>
 
 <p>Google being the omnipotent entity that it is, provides us with an unlimited wealth of knowledge at our finger tips. Literally anything you could possibly want to know about can be found with the ease of a click. This is pretty well known.</p>
@@ -332,9 +332,9 @@ Lets examine this search string:</p>
   
   <entry>
     <title type="html"><![CDATA[Bypass Antivirus With Shikata Ga Nai Encoder]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder/"/>
     <updated>2012-12-13T11:03:33-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder</id>
+    <id>http://irissecuritylabs.github.io/blog/2012/12/13/bypass-antivirus-with-shikata-ga-nai-encoder</id>
     <content type="html"><![CDATA[<p>Using metasploit, it is possible to combine a meterpreter session with a completely benign executable. That way when a user executes the innocent looking executable, a meterpreter session is opened to a remote machine essentially giving it identical level access to the exploited machine as the user running the binary. ESET&rsquo;s NOD32 in this example will still detect the malicious executable and try to delete it, but a connection will have already been made to the compromised system.</p>
 
 <ol>
@@ -378,9 +378,9 @@ Lets examine this search string:</p>
   
   <entry>
     <title type="html"><![CDATA[Evil Twin Attack: Disassociation Packets]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2012/12/02/disassociation-packets/"/>
     <updated>2012-12-02T13:03:36-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2012/12/02/disassociation-packets</id>
+    <id>http://irissecuritylabs.github.io/blog/2012/12/02/disassociation-packets</id>
     <content type="html"><![CDATA[<p>Evil Twin Attack: An attack in which the attacker deauthenticates clients from an access point (AP) then takes it down and puts up a fake AP with an identical SSID to that of the original to intercept and monitor all traffic as a man in the middle.</p>
 
 <p>In this portion of the attack I will mainly be focusing on the deauthentication packets or disassociation frames. The purpose of these deauthentication packets is to knock all the clients off of a wireless network before having them reconnect to the fake AP.</p>
@@ -427,9 +427,9 @@ Lets examine this search string:</p>
   
   <entry>
     <title type="html"><![CDATA[Simple but Effective - Hyperion PE-cryptor]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor/"/>
     <updated>2012-11-13T15:53:49-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor</id>
+    <id>http://irissecuritylabs.github.io/blog/2012/11/13/simple-but-effective-hyperion-pe-cryptor</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been indulging my interest in metasploit again and found the need to bypass Microsoft Security Essentials AV detection. I had done this before using executable binding and payload encryption using the shikata ga nai encrypter, but decided to see if I couldn&rsquo;t go about things in a different possibly easier fashion. So here is how I went about doing it.</p>
 
 <p>First I downloaded the Hyperion PE-cryptor (packer and encryptor) to my home directory and unzipped it:</p>
@@ -462,9 +462,9 @@ Lets examine this search string:</p>
   
   <entry>
     <title type="html"><![CDATA[Data Retrieval on a Failing Hard Drive]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive/"/>
     <updated>2012-10-28T22:10:21-04:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive</id>
+    <id>http://irissecuritylabs.github.io/blog/2012/10/28/data-retrieval-on-a-failing-hard-drive</id>
     <content type="html"><![CDATA[<p>If you&rsquo;ve ever manually imaged a hardrive before, you understand that it should be a simple task; mount the hard drive with an IDE or SATA to USB connector and pull off the data. Unfortunately, this is not always the case. When a hard drive has failed the Diagnostic Fitness Test and is most likely already well on it&rsquo;s way out. When this is the case, we&rsquo;re sometimes forced to use some unconventional linux tools to do the job. Here is how I did it.</p>
 
 <ol>

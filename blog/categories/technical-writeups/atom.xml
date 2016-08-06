@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Technical-writeups | Iris Security Labs Blog]]></title>
-  <link href="http://blog.irissecuritylabs.com/blog/categories/technical-writeups/atom.xml" rel="self"/>
-  <link href="http://blog.irissecuritylabs.com/"/>
+  <link href="http://irissecuritylabs.github.io/blog/categories/technical-writeups/atom.xml" rel="self"/>
+  <link href="http://irissecuritylabs.github.io/"/>
   <updated>2016-01-19T12:19:09-05:00</updated>
-  <id>http://blog.irissecuritylabs.com/</id>
+  <id>http://irissecuritylabs.github.io/</id>
   <author>
     <name><![CDATA[Iris Security Labs]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Custom PHP Backdoor Shell With Weevely]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2015/02/27/custom-php-backdoor-shell-with-weevely/"/>
     <updated>2015-02-27T14:45:07-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
+    <id>http://irissecuritylabs.github.io/blog/2015/02/27/custom-php-backdoor-shell-with-weevely</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been finding the need more and more to have a reliable backdoor PHP shell that has a reputable history. From work experience I knew about the classic c99.php backdoor shell and knew that it wasn&rsquo;t the direction I wanted to go in. If you haven&rsquo;t read The Hacker Blog article on it <a href="http://thehackerblog.com/every-c99-php-shell-is-backdoored-aka-free-shells/">here</a>, it&rsquo;s definitely worth a read.</p>
 
 <p>So I came across Weevely. What an awesome little backdoor! Here I&rsquo;m just going to walk through the basic usage of it to get you up and running. This backdoor is definitely the quick and easy way of doing things when pentesting a PHP site.</p>
@@ -39,9 +39,9 @@
   
   <entry>
     <title type="html"><![CDATA[Meterpreter Over SSL With Maligno]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/07/01/meterpreter-over-ssl-with-maligno/"/>
     <updated>2014-07-01T22:20:17-04:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/07/01/meterpreter-over-ssl-with-maligno</id>
     <content type="html"><![CDATA[<p>Certain situations require meterpreter sessions to be encrypted to avoid layer 4 detection. This is something I&rsquo;ve desired in the past but never really pursued, until I came across Maligno. Maligno is a platform from which you can launch metasploit payloads via https that are AES encrypted and base64 encoded. The payload to be pushed to the client can also be be encoded numerous times via any Metasploit encoders to avoid layer 7 detection.</p>
 
 <p>This is the process of setting up your server:</p>
@@ -89,9 +89,9 @@
   
   <entry>
     <title type="html"><![CDATA[Anonymous Content Grabbing With Python]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/01/21/anonymous-content-grabbing-with-python/"/>
     <updated>2014-01-21T21:15:36-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/01/21/anonymous-content-grabbing-with-python</id>
     <content type="html"><![CDATA[<p><img src="../../images/Anonymity.png" alt="Anonymity" /></p>
 
 <p>As a malware analyst, sometimes it&rsquo;s necessary to obtain a sample of a website&rsquo;s source code to manually evaluate any hidden malicious JavaScript. But why give up your IP address and possibly your exact whereabouts just to snoop around?</p>
@@ -106,9 +106,9 @@
   
   <entry>
     <title type="html"><![CDATA[Granular Network Security Monitoring With Bro IDS]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids/"/>
     <updated>2014-01-21T21:14:09-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
+    <id>http://irissecuritylabs.github.io/blog/2014/01/21/granular-network-security-monitoring-with-bro-ids</id>
     <content type="html"><![CDATA[<p><img src="../../images/Onion.png" alt="Onion" /></p>
 
 <p>If you&rsquo;re a security researcher and haven&rsquo;t kicked the wheels yet of Doug Burks' <a href="https://code.google.com/p/security-onion/">Security Onion</a>, you&rsquo;re missing out on a enormous asset to your security arsenal. The Onion provides complete insight into your network providing you with a full IDS (Intrusion Detection System) and NSM (Network Security Monitoring) capabilities.</p>
@@ -145,9 +145,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cryptolocker Analysis With Volatility]]></title>
-    <link href="http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
+    <link href="http://irissecuritylabs.github.io/blog/2013/11/11/cryptolocker-analysis-with-volatility/"/>
     <updated>2013-11-11T19:15:32-05:00</updated>
-    <id>http://blog.irissecuritylabs.com/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
+    <id>http://irissecuritylabs.github.io/blog/2013/11/11/cryptolocker-analysis-with-volatility</id>
     <content type="html"><![CDATA[<p>There&rsquo;s been a lot of hype recently about the new cryptolocker virus going around. Lucky me, I got a copy of it. Ths write-up documents what I found. Upon opening a malicious email sent to the user, <code>7879.tmp.exe</code> made it&rsquo;s way onto the system. This executable spawned two more processes, <code>bcfitawu.exe</code> and <code>Kgvndlyklezfbnr.exe</code>. A full memory dump was acquired using mandiant&rsquo;s tool Redline. A quick run through in Malwr and anubis prouced the following results:</p>
 
 <p><code>7879.tmp.exe</code>:
